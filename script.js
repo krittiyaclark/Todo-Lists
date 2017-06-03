@@ -49,8 +49,13 @@ deleteTodo: function(position) {
    // Case 1: If everything's true, make everything false.
    if (completedTodos === totalTodos) {
      // Make everthing false.
-     for (var i = 0; i < totalTodos; i++) {
-      this.todos[i].completed === false; 
+     for (i = 0; i < totalTodos; i++) {
+      this.todos[i].completed = false; 
+     }
+     // Case 2: Otherwise make everything true.
+   } else {
+   for (i = 0; i < totalTodos; i++) {
+      this.todos[i].completed = true; 
    }
  }
  
@@ -58,6 +63,19 @@ deleteTodo: function(position) {
  }
 };
 
+// 1. We want to get access to the display todos button.
+var displayTodosButton = document.getElementById('displayTodosButton');
+
+var toggleAllButton = document.getElementById('toggleAllButton');
+
+// 2. We want to run displayTodos method, when someone clicks the display.
+displayTodosButton.addEventListener('click', function() {
+  todoList.displayTodos();
+});
+
+toggleAllButton.addEventListener('click', function() {
+  todoList.toggleAll();
+});
 
 
 
