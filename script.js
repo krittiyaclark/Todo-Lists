@@ -63,6 +63,7 @@ deleteTodo: function(position) {
  }
 };
 
+/*
 // 1. We want to get access to the display todos button.
 var displayTodosButton = document.getElementById('displayTodosButton');
 
@@ -76,6 +77,21 @@ displayTodosButton.addEventListener('click', function() {
 toggleAllButton.addEventListener('click', function() {
   todoList.toggleAll();
 });
+*/
+
+var handlers = {
+    displayTodos: function() {
+    todoList.displayTodos();
+  },
+  toggleAll: function() {
+    todoList.toggleAll();
+  },
+  addTodo: function() {
+    var addTodoTextInput = document.getElementById('addTodoTextInput');
+    todoList.addTodo(addTodoTextInput.value);
+    addTodoTextInput.value = '';
+  }
+};
 
 
 
